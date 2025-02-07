@@ -47,3 +47,22 @@ let mood="happy! ";
 // console.log(mood.repeat(5)) ;
 
 // repeat() method returns a new string with a specified number of copies of the string it was called on.
+
+
+// reverse a string using loop
+
+let randomName="arbaz khan";
+
+for( let i=randomName.length-1;i>=0;i--){
+    let reverse=randomName[i];
+
+    if(reverse=='k'){
+        continue;
+    }
+    console.log(reverse)
+    
+}
+
+    
+    
+    
