@@ -23,7 +23,7 @@ array.shift()
 
 // shift()=> shift()  is used to remove first index element in the array
 
-const array2=[10,11,12,13,14,15]
+
 
 const array3=array.join('_')
 // console.log(array3)
@@ -111,7 +111,42 @@ for( let k=10;k<=20;k++){
 // read the array or show the array
 
 for( let l=0;l<=array.length-1;l++){
-    console.log(  array[l]);
+    // console.log(  array[l]);
 }
 
-console.log( typeof array)
+// console.log( typeof array)
+
+const array2=[10,11,12,13,14,15]
+
+//  ... spread operator is used to spread the array's element indivisually,
+
+const array5 =[...array,...array2,array3]
+// console.log(array5)
+
+// console.log(Array.isArray(array2))
+
+// Array.of()=> Array.of() is used to convert string object, etc in to array, but the thing is ,it  provide the only one index of on string or object
+
+let sum=(Array.of({name:'arbaz khan',age:23,college:'aihe'}))
+// console.log(sum[0].college)
+
+
+ const another_Array=[1,2,3,4,5,[5,4,3,2,1,[0,9,8]],'h','g','f',[1,[12]]];
+
+//  console.log(another_Array)
+
+// flat()=> flat() returns a single array of mutidimentional arrays
+
+ const modified_array=another_Array.flat(Infinity)
+ console.log(modified_array)
+
+
+ //
+
+
+ // Array.from()=> Array.from() is used to convert string  in to a array. but the thing is it provide the index  every single charecter in array here, we cant pass object, boolean and  number,  if we pass the these data type into this method then it return the empty array,
+ 
+let fromArr=(Array.from('53'))
+console.log(fromArr)
+
+console.log(Array.isArray(array3))
