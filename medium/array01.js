@@ -1,6 +1,7 @@
 
 const array=[0,1,2,3,4,5,6,7,8,9];
 
+// console.log(Array.isArray(array))
 
 
 array.push(11);
@@ -138,7 +139,7 @@ let sum=(Array.of({name:'arbaz khan',age:23,college:'aihe'}))
 // flat()=> flat() returns a single array of mutidimentional arrays
 
  const modified_array=another_Array.flat(Infinity)
- console.log(modified_array)
+//  console.log(modified_array)
 
 
  //
@@ -147,6 +148,6 @@ let sum=(Array.of({name:'arbaz khan',age:23,college:'aihe'}))
  // Array.from()=> Array.from() is used to convert string  in to a array. but the thing is it provide the index  every single charecter in array here, we cant pass object, boolean and  number,  if we pass the these data type into this method then it return the empty array,
  
 let fromArr=(Array.from('53'))
-console.log(fromArr)
+// console.log(fromArr)
 
 console.log(Array.isArray(array3))
