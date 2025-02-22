@@ -7,7 +7,29 @@
     
 </head>
 <body>
-    <input  type="text" name="" id="inp">
-    <div  class="box"></div>
+    <input  type="text" name="" id="inp"> <button>add</button>
+    <div style="border: 2px solid black; width: 12rem; height: 3rem;margin-top: 2rem; "  class="box"></div>
 </body>
+
+<script>
+    
+
+
+
+
+document.querySelector('#inp').addEventListener('keypress',(e)=>{
+
+const inpValue=document.querySelector('#inp').value
+const div=document.querySelector('.box')
+   div.innerText=inpValue.trim()
+
+
+
+})
+
+   
+
+
+   
+</script>
 </html>
