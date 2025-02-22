@@ -5,9 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>events</title>
 </head>
-<body style="background-color: black; color: white; text-align: center; " >
+<body style="background-color: black; color: white;  " >
     
     <h1>DOM Events</h1>
-    <button>click me!</button>
+    
+    <ul id="all-list">
+        <li>arbaz khan</li>
+        <li id="salman" >salman khan</li>
+        <li>faizan khan</li>
+        <li>adnan khan</li>
+    </ul>
+
+<script>
+    document.querySelector('#all-list').addEventListener('click', function(e){
+        console.log('ul clicked');
+        
+    });
+
+    document.querySelector('#salman').addEventListener('click', function(e){
+        e.stopPropagation();
+        
+        console.log('salman  clicked');
+        
+    });
+
+</script>
+
 </body>
 </html>
