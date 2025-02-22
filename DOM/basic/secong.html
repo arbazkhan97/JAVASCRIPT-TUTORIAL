@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #222; color: #fff;" >
+    <h1>this is second lecture</h1>
+    <ul class="items">
+        <li>javascript</li>
+    </ul>
+    
+
+</body>
+<script>
+
+    // add element in list
+
+    const addItems=function(language){
+
+        let li=document.createElement('li')
+        li.appendChild(document.createTextNode(`${language}`)) 
+       
+         document.querySelector('.items').appendChild(li)
+       
+        }
+        addItems('java')
+        addItems('python')
+        addItems('ruby')
+        addItems('java')
+        addItems('python')
+        addItems('ruby')
+
+        // edit elment
+
+
+        const editItems=function(language){
+            
+     const secondLang=document.querySelector('li:nth-child(2)')   
+     const li= document.createElement('li')
+     li.appendChild(document.createTextNode(`${language}`))
+     secondLang.replaceWith(li)
+
+        }
+editItems('cpp')
+// editItems('typescript')
+// editItems('html')
+
+// remove element
+
+const deleteItems=function(e){
+    // console.log(e.target.name
+   
+    const delList= document.querySelector('li:nth-child(5)')
+     console.log(delList)
+     delList.remove()
+  
+
+}
+deleteItems()
+ 
+    
+
+</script>
+</html>

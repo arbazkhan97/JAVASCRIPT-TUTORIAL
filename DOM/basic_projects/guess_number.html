@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guess random number</title>
+    <style>
+body{
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+    </style>
+</head>
+<body  >
+
+    <h1>guess Random number</h1>
+
+    <h3>Guess a number between 1 and 100</h3>
+    <h4>You have only 3 attempt!</h4>
+
+    <input type="text" id="guessInput">
+    <button id="submit" onclick="guess()">Submit</button>
+
+
+    <p id="random" ></p>
+    <p id="message"></p>
+    <p id="attempt" style="color:yellow" >remainig attempt=3</p>
+    
+    
+   
+       
+    
+</body>
+
+<script>
+
+
+ let arr=[];
+
+ const randomNumber=Math.floor(Math.random()*100)+1;  
+ const submit=document.getElementById('submit');
+
+ 
+const guess=(e)=>{ 
+    
+    
+    const guessInputNUmber=parseInt(document.getElementById('guessInput').value);
+      
+    arr.push(guessInputNUmber)
+   
+    if(arr.length===3){
+    
+        submit.disabled=true;
+    }
+ 
+   
+    if(guessInputNUmber==='' || isNaN(guessInputNUmber)
+     || guessInputNUmber<=0 || guessInputNUmber>100  )
+    {
+
+        alert('PLEASE enter valid number')
+        return;
+
+    }
+
+    
+       
+    document.querySelector('#random').innerHTML=` Your random number is ${randomNumber} `
+    document.querySelector('#random').style.color='blue';
+        
+    document.querySelector('#attempt').innerText=` Remaining attempts  ${3-arr.length} `
+    document.querySelector('#attempt').style.color='yellow';
+
+    
+
+     if(guessInputNUmber>randomNumber){
+
+        document.querySelector('#message').innerHTML='Your guess is too high';
+        document.querySelector('#message').style.color='red';
+} else if(guessInputNUmber<randomNumber){
+
+    document.querySelector('#message').innerHTML='Your guess is too low';
+    document.querySelector('#message').style.color='red';
+
+}
+else{
+    document.querySelector('#message').innerHTML='Congratulations! You guessed the number';
+    document.querySelector('#message').style.color='green';
+}
+
+document.getElementById('guessInput').value='';
+
+
+}
+
+
+
+</script>
+</html>

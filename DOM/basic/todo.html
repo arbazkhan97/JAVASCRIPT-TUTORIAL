@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style=" text-align: center;    background-color: #222; color: #fff  ">
+    
+    <h1>TODO APP</h1>
+
+    <input class="input" type="text" placeholder="enter your items" >
+    <button>Add Items</button>
+ 
+    <ul class="todo">
+        <li>javascript  <button class="listbtn" >delete</button> </li>
+    </ul>
+
+    <button class="allDelete" >DeleteAll</button>
+
+    <script>
+
+    //     let example=document.querySelector('ul li');
+    //     // console.log(example)
+        
+    //     let text=example.innerHTML;
+    //    console.log(text.slice(0,11)) 
+
+    // add items in list
+
+    const ul=document.querySelector('.todo')
+    const input=document.querySelector('.input')
+    const btn=document.querySelector('button')
+    
+    btn.addEventListener('click',()=>{
+
+        addItems(input.value)
+        input.value=''
+
+
+
+          })
+
+    const addItems=(items)=>{
+
+        const li=document.createElement('li')
+        if(!items){
+            alert('enter items name');
+            return;
+        }
+
+            li.appendChild(document.createTextNode(`${items}`))
+                     
+            
+            // add delete button in items
+
+
+            const btn=document.createElement('button') 
+           btn.appendChild(document.createTextNode('delete'))
+          
+           li.appendChild(btn)
+
+    
+
+          
+
+        document.querySelector('.todo').appendChild(li)
+     
+    }
+
+    // delete Element from list
+
+    document.querySelector('.todo').addEventListener("click",function(event){
+         
+    
+
+        if(event.target.nodeName==='BUTTON'){
+            event.target.parentNode.remove()
+        }
+     
+    
+});
+
+
+
+// delete All element in the list
+
+document.querySelector('.allDelete').addEventListener('click',(e)=>{
+
+    ul.remove()
+})
+    
+
+
+    </script>
+    
+</body>
+</html>

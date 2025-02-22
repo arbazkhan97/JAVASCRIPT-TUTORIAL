@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main2{
+            background-color: red;
+            color: black;
+            border-radius: 20px;
+            border: 3px solid green;
+        }
+    </style>
+</head>
+<body style="background-color: #222; color: #fff;" >
+
+    <div class="parent">
+        <div class="child">one</div>
+        <div class="child">two</div>
+        <div class="child">three</div>
+        <div class="child">four</div>
+    </div>
+    
+</body>
+
+<script>
+    const div=document.querySelector('.parent')
+
+    const childOne=document.querySelector('.child')
+    
+    // chils to parent
+
+    // console.log(childOne)
+    // console.log(childOne.parentElement)
+
+    // parent to child
+
+    // console.log(div)
+    // console.log(div.children[2])
+    // console.log(div.firstElementChild)
+    // console.log(div.lastElementChild)
+
+    // style
+
+    // div.firstElementChild.style.color='green'
+
+    // div.lastElementChild.style.color='blue'
+
+    // const children= div.children;
+
+    // for(let i=0;i<children.length;i++){
+
+    //     children[i].innerText='arbaz khan'
+    //     children[i].style.color='green'
+
+    // }
+
+    // create div and append in body
+
+    const newDiv=document.createElement('div');
+
+    newDiv.setAttribute('class','main ')
+    newDiv.id=Math.floor(Math.random()*10+1);
+    newDiv.style.backgroundColor='pink'
+    newDiv.style.color='black'
+    newDiv.style.padding='12px'
+     newDiv.style.margin='12px'
+
+    const divText=document.createTextNode('arbaz khan');
+    newDiv.appendChild(divText);
+
+    document.body.appendChild(newDiv)
+
+    newDiv.setAttribute('class','main2')
+    
+
+
+     // create multiple button and append in body using js
+    
+    function createMUltipleButton(text,textColor,bgColor){
+
+        const button=document.createElement("button");
+        button.style.padding='10px'
+        button.style.cursor='pointer'
+        button.style.color=textColor;
+        button.style.background=`${bgColor}`
+        button.style.borderRadius='10px'
+        button.style.border='none'
+        button.style.marginLeft='30px'
+        button.style.marginBottom='10px'
+        button.style.marginTom='10px'
+        button.setAttribute('type','submit');
+        
+        // const btnText=document.createTextNode(`${textItems}`)
+        button.innerText=`${text}`
+        // button.appendChild(btnText);
+        document.body.appendChild(button)      
+
+    }
+    
+    const text=['submit','clickMe!','ok!','click Here!' ]
+    const textColor=['green','red','blue','pink']
+    const bgColor=['purple','orange','black']
+
+    text.forEach((text,index)=>(
+        
+        createMUltipleButton(text,textColor[index],bgColor[index])
+     ))
+    
+
+
+   
+    </script>
+</html>
