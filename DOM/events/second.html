@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>event functions</h1>
+
+    <h2 id="salman" >salman khan</h2>
+    <p id="description" >about salman khan</p>
+    <span id="dob" >10/12/2005</span>
+
+</body>
+
+<script>
+
+document.getElementById('salman').addEventListener('click',(e)=>{
+
+    console.log(e)
+
+    console.log(e.timeStamp)
+    
+    // console.log(e.toElement)
+    // console.log(e.source)
+    // console.log(e.currentTarget)
+    console.log(e.clientX)
+    console.log(e.clientY)
+    const height=e.clientX;
+    const width=e.clientY
+
+   const div= document.createElement('div')
+   div.style.width=height;
+   div.style.height=width
+   div.style.borderRadius='50%'
+   div.style.border='0.5px solid black'
+
+   document.querySelector('body').appendChild(div)
+
+console.log(e.ctrlKey)
+console.log(e.screenX)
+console.log(e.screenY)
+
+
+})
+
+</script>
+
+</html>
