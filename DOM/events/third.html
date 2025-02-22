@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h1>arbaz khan</h1>
+
+
+<script>
+    window.addEventListener('keypress',(e)=>{
+        console.log(e.keyCode)
+
+        if(e.keyCode===97 || e.keyCode===65){
+            console.log('move left')
+        }else if(e.keyCode===100 || e.keyCode===68){
+            console.log('move right')
+        }
+        else if(e.keyCode===115|| e.keyCode===83){
+            console.log('move down')
+
+        }else if(e.keyCode===119 || e.keyCode===87){
+            console.log('move top')
+        }
+        else{
+            console.log('nothing happened')
+        }
+        for(i=0; i<=e.keyCode;i++){
+
+            console.log(i)
+        }
+    })
+</script>
+</body>
+</html>
