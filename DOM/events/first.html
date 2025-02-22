@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM events</title>
+    
+</head>
+<body style="background-color: black; color: white; " >
+    <h1>DOM Events</h1>
+
+    <ul id="all-list" >
+        <li><span>arbaz khan</span></li>
+        <li><span>salman khan</span></li>
+        <li><span>fazan khan</span></li>
+        <li><span>adnan khan</span></li>
+    </ul>
+
+</body>
+
+<script>
+
+document.getElementById('all-list').addEventListener('click',(e)=>{
+
+    
+    // console.log(panode)
+   const tag=e.target.nodeName;
+   if(tag==='SPAN'){
+ e.target.parentNode.remove()
+    
+   }
+   
+   
+
+})
+</script>
+</html>
