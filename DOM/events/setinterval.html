@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;" >
+
+    <h1>arbaz khan</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+
+    <p id="typing" ></p>
+    
+</body>
+
+<script>
+
+let intervalId;
+
+const btn=document.querySelector('#start')
+
+const print=()=>{
+
+   
+    document.querySelector('h1').style.color='green'
+    
+
+    console.log('start interval')
+    
+}
+
+
+btn.addEventListener('click',()=>{
+
+  intervalId=  setInterval( print
+  , 1000);
+})
+
+
+document.querySelector('#stop').
+addEventListener('click',()=>{
+
+    clearInterval(intervalId)
+    console.log('stop inteval')
+})
+
+
+let text='arbaz khan';
+
+let typig=document.querySelector('#typing');
+
+
+
+    
+
+
+</script>
+
+
+
+</html>
