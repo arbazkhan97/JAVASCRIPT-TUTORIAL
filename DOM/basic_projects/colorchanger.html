@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color changer</title>
+</head>
+<body style="background-color: black; color: white;" >
+
+    <h1>random color changer</h1>
+    <p id="color" ></p>
+
+    <div style="height: 10rem; width: 10rem; border: 2px solid white; margin-bottom: 1rem;" class="container"></div>
+
+    <button id="start" >start</button>
+    <button id="stop" >stop</button>
+    
+</body>
+
+<script>
+
+
+
+let intervalId;
+
+
+ let generateColor= function (){
+
+    const hexValue="0123456789ABCDEF";
+
+    let color='#'
+    
+for (let i = 0; i < 6; i++) {
+    
+    color+=hexValue[Math.floor(Math.random()*16)]
+    
+    
+}
+
+return color;
+
+ }
+
+ const startChangingColor=function(){
+
+    if(!intervalId){
+
+        intervalId= setInterval(changingBgColor,1000)
+
+    }
+
+  
+
+    function changingBgColor(){
+        document.querySelector('.container').style.backgroundColor=generateColor();
+
+        document.querySelector('#color').innerHTML=`Hexcode=${generateColor()}`
+    }
+    
+ }
+
+ const stopChangingColor=function(){
+  
+    clearInterval(intervalId);
+    intervalId=null;
+
+ }
+
+
+document.querySelector('#start').addEventListener('click',startChangingColor)
+
+document.querySelector('#stop').addEventListener('click',stopChangingColor)
+
+
+
+
+
+
+</script>
+</html>
