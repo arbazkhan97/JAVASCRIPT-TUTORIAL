@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random user api request</title>
+</head>
+<body style="background-color: black; color: white;" >
+    
+    <h1>random user api request</h1> 
+
+
+    <div class="card" style=" width: 18rem; border: 1px solid white; border-radius: 10px; " >
+
+        <img src="" alt="" width="100%"  style="border-radius: 10px;" >
+
+        <h3 id="name"></h3>
+        <p id="age" ></p>
+        <p id="email"></p>
+        <p id="gender"></p>
+        <p id="city"></p>
+        <p id="country"></p>
+
+
+    </div>
+    <button id="btn" >genrate new user </button>
+
+</body>
+ 
+
+<script>
+    const URL='https://randomuser.me/api/'
+
+let btn=document.getElementById('btn')
+
+
+const showData=()=>{
+
+    const xhr=new XMLHttpRequest()
+    xhr.open( 'GET',URL)
+
+    xhr.onreadystatechange=function(){
+
+        if(xhr.readyState===4){
+
+            const data= JSON.parse(this.response)
+            
+            const res=data.results[0]
+              
+            const img=document.querySelector('img')
+            img.setAttribute('src',res.picture.large)
+            
+        
+            document.getElementById('name').
+            innerHTML=`Name: ${res.name.title} ${res.name.first}${res.name.last} `
+        
+            document.getElementById('age').
+            innerHTML=`Age: ${res.dob.age}  `
+        
+            document.getElementById('email').
+            innerHTML=`Email: ${res.email}  `
+        
+            document.getElementById('gender').
+            innerHTML=`Gender: ${res.gender}`
+        
+            document.getElementById('city').
+            innerHTML=`City: ${res.location.city}`
+        
+            document.getElementById('country').
+            innerHTML=`Country: ${res.location.country}`   
+
+        }
+
+    }
+
+    xhr.send()
+}
+
+
+btn.addEventListener('click',showData)
+
+</script>
+
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;"  >
+    <h1> API REQUEST </h1>
+
+    <div class="crad" style="height: 20rem; width: 12rem; border: 1px solid white;  " >
+
+        <img src="" alt="" width="100%" height="47%"  >
+        <h3 id="name" ></h3>
+        <p id="followers" ></p>
+        <p style="padding-bottom: 10px; color: blue; " id="bio" ></p>
+    </div>
+
+
+<script>
+
+    const apiUrl='https://api.github.com/users/arbazkhan97'
+
+const xhr= new XMLHttpRequest();
+
+xhr.open('GET',apiUrl)
+
+xhr.onreadystatechange= function(){
+
+    
+    if(xhr.readyState===4){
+
+       
+        const data= JSON.parse(this.response)
+       
+        let img=document.querySelector('img');
+       
+
+        img.setAttribute('src',data.avatar_url)
+        
+        const name = document.querySelector('#name')
+        name.innerHTML=data.name;
+
+        document.querySelector('#followers').innerHTML=`followers: ${data.followers}`
+        document.querySelector('#bio').innerHTML=data.bio
+
+
+    }
+}
+
+xhr.send()
+
+</script>
+
+
+</body>
+</html>
+
+
+
+<script>
+
+        
+    const randomUserApi='https://randomuser.me/api/'
+    
+    
+    const xhr= new XMLHttpRequest()
+    
+    xhr.open('GET', randomUserApi);
+    
+    
+    const btn=document.querySelector('#btn');
+    
+    btn.addEventListener('click,',()=>{
+    
+        
+        console.log('btn clicked')
+    
+    
+    
+    xhr.onreadystatechange=function(){
+    
+        if(xhr.readyState===4){
+    
+        const data=JSON.parse(this.response);
+    
+        const res=data.results[0]
+        console.log(res)
+    
+        
+    
+        const img=document.querySelector('img')
+        img.setAttribute('src',res.picture.large)
+        
+    
+        document.getElementById('name').
+        innerHTML=`Name: ${res.name.title} ${res.name.first}${res.name.last} `
+    
+        document.getElementById('age').
+        innerHTML=`Age: ${res.dob.age}  `
+    
+        document.getElementById('email').
+        innerHTML=`Email: ${res.email}  `
+    
+        document.getElementById('gender').
+        innerHTML=`Gender: ${res.gender}`
+    
+        document.getElementById('city').
+        innerHTML=`City: ${res.location.city}`
+    
+        document.getElementById('country').
+        innerHTML=`Country: ${res.location.country}`
+    
+    
+    
+    
+        
+        }
+    
+    
+    }
+    
+    
+    
+    
+    
+    
+    })
+    
+    xhr.send()
+    
+        </script>
+    
