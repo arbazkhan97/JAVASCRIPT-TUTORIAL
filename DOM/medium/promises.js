@@ -76,6 +76,7 @@ async function requestApi(){
 
        const response=   await fetch(apiUrl);
        
+       
        result= await response.json()
        console.log( result)
 
@@ -86,5 +87,5 @@ async function requestApi(){
         
     }
 }
-
+console.log('arbaz khamn ')
 requestApi()
